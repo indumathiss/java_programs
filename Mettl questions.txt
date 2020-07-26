@@ -1,0 +1,423 @@
+1.Is even?
+
+if(input1%2==0)
+return 2;
+else
+return 1;
+
+2.Is odd ?
+
+if(input1%2!=0)
+return 2;
+else
+return 1;
+
+3.Return last digit of the given number
+
+int n=input1%10;
+ return Math.abs(n);
+
+4.Return second last digit of given number
+
+if(input1<0)
+ input1=Math.abs(input1);
+if(input1>=0&&input1<=9)
+  return -1;
+int n=(input1/10)%10;
+return n;
+
+5.Sum of last digits of two given numbers
+
+int n,m;
+ n=input1%10;
+ m=input2%10;
+  return Math.abs(n)+Math.abs(m);
+        
+6.Is N an exact multiple of M
+
+if(input1==0 || input2==0)
+  return 3;
+else if(input1%input2==0)
+   return 2;
+else 
+  return 1;
+
+7. Of the given 5, how many are even ?
+
+int count=0;
+if(input1%2==0)
+    count++;
+if(input2%2==0)
+    count++;
+if(input3%2==0)
+    count++;
+if(input4%2==0)
+    count++;
+if(input5%2==0)
+    count++;
+return count;
+
+8. Of the given 5, how many are odd?
+
+int count=0;
+if(input1%2!=0)
+    count++;
+ if(input2%2!=0)
+   count++;
+ if(input3%2!=0)
+    count++;
+ if(input4%2!=0)
+    count++;
+ if(input5%2!=0)
+    count++;
+  return count;
+
+9.Of the 5, how many are even or odd ?
+ int n=0,m=0;
+if(input1%2==0)
+n++;
+else
+m++;
+if(input2%2==0)
+n++;
+else
+m++;
+if(input3%2==0)
+n++;
+else
+m++;
+if(input4%2==0)
+n++;
+else
+m++;
+if(input5%2==0)
+n++;
+else
+m++;
+if(input6.equals("even"))
+return n;
+else
+return m;
+
+10. Is Prime ?
+int count=0;
+    for(int i=2;i<input1;i++)
+    {
+        if(input1%i==0)
+	{
+        count++;
+	break;
+	}
+    }
+    if(count==1)
+    return 2;
+    else return 1;
+
+11.Factorial of a number
+int fact=1;
+for(int i=1;i<=input1;i++)
+{
+fact=fact*i;
+}
+return fact;
+
+12.Nth Fibonacci
+int a=0,b=1;
+int s;
+if(input1==1)
+return a;
+
+for(int i=2;i<=input1;i++)
+{
+
+s=a+b;
+a=b;
+b=s;
+
+
+}
+return a;
+
+13.Nth Prime
+int n=1,count=0,i;
+    while(count<input1)
+    {
+        n=n+1;
+        for( i=2;i<=n;i++)
+        {
+            if(n%i==0)
+break;
+
+}
+if(n==i)
+count=count+1;
+}
+return n;
+        
+14.Number of primes in a specified range
+int count,sum=0;
+for(int i=input1;i<=input2;i++)
+{
+count=1;
+for(int n=2;n<i;n++)
+{
+if(i%n==0)
+{
+count=0;
+break;
+}
+
+}
+if(count==1)
+sum++;
+}
+return sum;
+
+15.All Digits Count
+int n,count=0;
+while(input1>0)
+{
+n=input1%10;
+count++;
+input1=input1/10;
+
+}
+return count;
+
+16.Unique Digits count
+
+int count=0,n,m=0;
+int arr[]=new int[25000];
+int n=input1;
+while(n!=0)
+{
+a[m]=n%10;
+n/=10;
+m++;
+}
+for(int i=0;i<m;i++)
+{
+for(int j=i+1;j<m;j++)
+{
+if(a[i]==a[j]&&a[i]!=-1)
+a[j]=-1;
+}
+}
+for(int i=0;i<m;i++)
+{
+if(a[i]!=-1)
+count++;
+}
+
+return count;
+
+17.Non-Repeated Digits count
+int count=0,n,m=0;
+int arr[]=new int[25000];
+int n=input1;
+while(n!=0)
+{
+a[m]=n%10;
+n/=10;
+m++;
+}
+for(int i=0;i<m;i++)
+{
+int c=0;
+for(int j=i+1;j<m;j++)
+{
+if(a[i]==a[j]&&a[i]!=-1)
+{
+c=1;
+a[j]=-1;
+}
+}
+if(c==1)
+a[i]=-1;
+}
+for(int i=0;i<m;i++)
+{
+if(a[i]!=-1)
+count++;
+}
+
+return count;
+
+18.Digit sum: Sum of all digits in N
+int sum=0,n;
+n=Math.abs(input1);
+while(n>0 || sum>9)
+{
+sum=sum+(n%10);
+n=n/10;
+if(n==0 && sum>9)
+{
+n=sum;
+sum=0;
+}
+}
+if(input1<0)
+return -sum;
+else
+return sum;
+
+19.Digit sum even:Sum of even digits in N
+int sum=0,n;
+while(input1>0)
+{
+n=input1%10;
+if(n%2==0)
+{
+sum=sum+n;
+}
+input1=input1/10;
+}
+return sum;
+
+20. Digit sum odd:Sum of odd digits in N
+int sum=0,n;
+while(input1>0)
+{
+n=input1%10;
+if(n%2!=0)
+{
+sum=sum+n;
+}
+input1=input1/10;
+}
+return sum;
+
+21.Digit sum opt:Sum of even or odd digits
+int even=0,n,odd=0;
+while(input1>0)
+{
+n=input1%10;
+if(input2.equals("even"))
+{
+if(n%2==0)
+even=even+n;
+}
+else
+{
+if(n%2!=0)
+odd=odd+n;
+}
+input1=input1/10;
+
+}
+if(input2.equals("even"))
+return even;
+else
+return odd;
+
+22.Is Palindrome Number?
+int s,n,res=0;
+s=input1;
+while(input1>0)
+{
+n=input1%10;
+res=res+(n*10);
+input1=input1/10;
+}
+if(res==s)
+return 2;
+else
+return 1;
+
+23.Is Palindrome Possible?
+int arr[]=new int[256];
+		String str=Integer.toString(input1);
+              for(int i=0;i<str.length();i++) {
+                     arr[str.charAt(i)]++;
+              }
+              int odd=0;
+              for(int i=0;i<256;i++) {
+                   if(arr[i]%2!=0) {
+                           odd++;
+                     }
+              }
+              if(odd>1)
+              return 1;
+              else
+              return 2;
+
+
+24.Create PIN using alpha,beta and gama
+int min1=Math.min(input1%10,Math.min(input2%10,input3%10));
+		int min2=Math.min(input1/10%10,Math.min(input2/10%10,input3/10%10));
+		int min3=Math.min(input1/100%10,Math.min(input2/100%10,input3/100%10));
+		
+		int max1=Math.max(input1/100%10,Math.max(input1/10%10,input1%10));
+		int max2=Math.max(input2/100%10,Math.max(input2/10%10,input2%10));
+		int max3=Math.max(input3/100%10,Math.max(input3/10%10,input3%10));
+		int max=Math.max(max1,Math.max(max2,max3));
+		return (max*1000)+(min3*100)+(min2*10)+min1;
+
+
+25.Weight of a Hill Pattern
+int sum=input2,r=0;
+		for(int i=2;i<=input1;i++)
+		{
+			r+=input2+input3;
+			sum+=r*i;
+			r=r-input2;
+		}
+		return sum;
+
+
+/*int sum=0;
+for(int i=1;i<=input1;i++)
+{
+for(int j=1;j<=i;j++){
+sum=sum+input2;
+}
+input2=input2+input3;
+}
+return sum;
+*/
+
+
+26.Return Second Word in UpperCase
+String str[]=input1.split(" ");
+		if(str.length<=1)
+		return "LESS";
+		else
+		return str[1].toUpperCase();
+
+
+27.Is Palindrome(String)
+StringBuffer b=new StringBuffer(input1);
+		b.reverse();
+		String s1=b.toString();
+		if(s1.equalsIgnoreCase(input1))
+		return 2;
+		else
+		return 1;
+
+
+28.Weight of Stirng
+
+input1=input1.toLowerCase();
+		int sum=0;
+		if(input2==0)
+		{
+			input1=input1.replaceAll("[aeiouAEIOU]"," ");
+			for(int i=0;i<input1.length();i++)
+			{
+				if(Character.isAlphabetic(input1.charAt(i)))
+				sum+=input1.charAt(i)-'a'+1;
+
+			}
+		}
+		else
+		{
+			for(int i=0;i<input1.length();i++)
+			{
+				if(Character.isAlphabetic(input1.charAt(i)))
+				sum+=input1.charAt(i)-'a'+1;
+
+			}
+		}
+		return sum;
+
+
